@@ -17,7 +17,7 @@ public class EjemploDAO {
 
         System.out.println("\nMostrar todas");
         System.out.println("-------------------------------");
-        mundial.getEscuderiaDAO().findAll();/*.forEach(System.out::println);
+        mundial.getEscuderiaDAO().findAll().forEach(System.out::println);
 
         System.out.println("\nMostrar solo una");
         System.out.println("-------------------------------");
@@ -39,15 +39,15 @@ public class EjemploDAO {
         System.out.println("\nBorrar una escudería");
         System.out.println("-------------------------------");
         mundial.getEscuderiaDAO().deleteById("Seat");
-        mundial.getEscuderiaDAO().findAll().forEach(System.out::println);*/
+        mundial.getEscuderiaDAO().findAll().forEach(System.out::println);
 
         //.................................................................
 
         System.out.println("\nMostrar todos");
         System.out.println("-------------------------------");
-        mundial.getPilotoDAO().findAll();//.forEach(System.out::println);
+        mundial.getPilotoDAO().findAll().forEach(System.out::println);
 
-        /*System.out.println("\nMostrar solo uno");
+        System.out.println("\nMostrar solo uno");
         System.out.println("-------------------------------");
         System.out.println(mundial.getPilotoDAO().findById(16));
 
@@ -66,13 +66,13 @@ public class EjemploDAO {
         System.out.println("\nBorrar un piloto");
         System.out.println("-------------------------------");
         mundial.getPilotoDAO().deleteById(50);
-        mundial.getPilotoDAO().findAll().forEach(System.out::println);*/
+        mundial.getPilotoDAO().findAll().forEach(System.out::println);
 
         //.................................................................
 
         System.out.println("\nMostrar todos");
         System.out.println("-------------------------------");
-        mundial.getCircuitoDAO().findAll().forEach(System.out::println);
+        mundial.getCircuitoDAO().findAll();//.forEach(System.out::println);
 
         System.out.println("\nMostrar solo uno");
         System.out.println("-------------------------------");
@@ -94,6 +94,10 @@ public class EjemploDAO {
         System.out.println("-------------------------------");
         mundial.getCircuitoDAO().deleteById(22);
         mundial.getCircuitoDAO().findAll().forEach(System.out::println);
+
+        //.................................................................
+
+
 
         mundial.close();
 
