@@ -38,7 +38,7 @@ public class Piloto {
 
     @Override
     public String toString() {
-        return "Piloto{" +
+        return "Circuito{" +
                 "nombre='" + nombre + '\'' +
                 ", numero=" + numero +
                 ", equipo='" + equipo + '\'' +

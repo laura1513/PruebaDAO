@@ -1,4 +1,5 @@
 import dao.sql.SQLiteDAOManagerImpl;
+import models.Circuito;
 import models.Escuderia;
 import dao.sql.SQLiteEscuderiaDAOImpl;
 import models.Piloto;
@@ -42,12 +43,11 @@ public class EjemploDAO {
 
         //.................................................................
 
-
         System.out.println("\nMostrar todos");
         System.out.println("-------------------------------");
-        mundial.getPilotoDAO().findAll().forEach(System.out::println);
+        mundial.getPilotoDAO().findAll();//.forEach(System.out::println);
 
-        System.out.println("\nMostrar solo uno");
+        /*System.out.println("\nMostrar solo uno");
         System.out.println("-------------------------------");
         System.out.println(mundial.getPilotoDAO().findById(16));
 
@@ -66,7 +66,34 @@ public class EjemploDAO {
         System.out.println("\nBorrar un piloto");
         System.out.println("-------------------------------");
         mundial.getPilotoDAO().deleteById(50);
-        mundial.getPilotoDAO().findAll().forEach(System.out::println);
+        mundial.getPilotoDAO().findAll().forEach(System.out::println);*/
+
+        //.................................................................
+
+        System.out.println("\nMostrar todos");
+        System.out.println("-------------------------------");
+        mundial.getCircuitoDAO().findAll().forEach(System.out::println);
+
+        System.out.println("\nMostrar solo uno");
+        System.out.println("-------------------------------");
+        System.out.println(mundial.getCircuitoDAO().findById(16));
+
+        System.out.println("\nInsertar un circuito");
+        System.out.println("-------------------------------");
+        Circuito andorra = new Circuito("Andorra", 22,LocalDate.parse("2003-01-15 00:00:00", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        mundial.getCircuitoDAO().save(andorra);
+        mundial.getCircuitoDAO().findAll().forEach(System.out::println);
+
+        System.out.println("\nActualizar un circuito");
+        System.out.println("-------------------------------");
+        andorra.setNombre("A");
+        mundial.getCircuitoDAO().update(andorra);
+        mundial.getCircuitoDAO().findAll().forEach(System.out::println);
+
+        System.out.println("\nBorrar un circuito");
+        System.out.println("-------------------------------");
+        mundial.getCircuitoDAO().deleteById(22);
+        mundial.getCircuitoDAO().findAll().forEach(System.out::println);
 
         mundial.close();
 
