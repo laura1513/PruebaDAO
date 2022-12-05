@@ -1,2 +1,7 @@
-package dao;public class DAOManager {
+package dao;
+
+public interface DAOManager {
+    EscuderiaDAO getEscuderiaDAO();
+    PilotoDAO getPilotoDAO();
+    // ...
 }
